@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,103 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Life_Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SVD-bm-N16">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-if-MEm">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="243"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zov-Yi-AhQ" userLabel="Up Button">
+                                                <rect key="frame" x="157" y="91.333333333333343" width="79" height="60.666666666666657"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="UP">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="upButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dpe-r5-zUU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Zov-Yi-AhQ" firstAttribute="centerY" secondItem="D0a-if-MEm" secondAttribute="centerY" id="Khd-l7-YkQ"/>
+                                            <constraint firstItem="Zov-Yi-AhQ" firstAttribute="centerX" secondItem="D0a-if-MEm" secondAttribute="centerX" id="MFo-bz-22L"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3d-Dh-iXH">
+                                        <rect key="frame" x="0.0" y="258" width="393" height="243"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueDie" translatesAutoresizingMaskIntoConstraints="NO" id="4lA-bX-Soi">
+                                                <rect key="frame" x="86.666666666666686" y="11.666666666666686" width="220" height="220"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="220" id="0ms-Yz-HGR"/>
+                                                    <constraint firstAttribute="height" constant="220" id="UJJ-fe-BxW"/>
+                                                </constraints>
+                                                <attributedString key="userComments">
+                                                    <fragment content="Dice Image"/>
+                                                </attributedString>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-9r-4iZ" userLabel="Life Value Label">
+                                                <rect key="frame" x="163" y="86.666666666666686" width="67" height="70"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="BfX-9r-4iZ" firstAttribute="centerX" secondItem="M3d-Dh-iXH" secondAttribute="centerX" id="0SA-vf-2qB"/>
+                                            <constraint firstItem="4lA-bX-Soi" firstAttribute="centerX" secondItem="M3d-Dh-iXH" secondAttribute="centerX" id="XWK-5S-Zsh"/>
+                                            <constraint firstItem="BfX-9r-4iZ" firstAttribute="centerY" secondItem="M3d-Dh-iXH" secondAttribute="centerY" id="Xx6-bz-VbR"/>
+                                            <constraint firstItem="4lA-bX-Soi" firstAttribute="centerY" secondItem="M3d-Dh-iXH" secondAttribute="centerY" id="dZL-r3-m7z"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hM5-Zz-eFa">
+                                        <rect key="frame" x="0.0" y="516" width="393" height="243"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="941-WX-3gt" userLabel="Down Button">
+                                                <rect key="frame" x="122.33333333333331" y="91.333333333333371" width="148.66666666666669" height="60.666666666666657"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="DOWN">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="downButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kme-Er-HqS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="941-WX-3gt" firstAttribute="centerY" secondItem="hM5-Zz-eFa" secondAttribute="centerY" id="6Os-Sl-Bte"/>
+                                            <constraint firstItem="941-WX-3gt" firstAttribute="centerX" secondItem="hM5-Zz-eFa" secondAttribute="centerX" id="9u5-Op-JHe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.1517196375" green="0.3747707213" blue="0.4261187354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SVD-bm-N16" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="78N-TE-k9A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SVD-bm-N16" secondAttribute="bottom" id="Aac-vp-R1U"/>
+                            <constraint firstItem="SVD-bm-N16" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="f9t-Iy-Qf3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SVD-bm-N16" secondAttribute="trailing" id="os5-xx-not"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lifeValueLabel" destination="BfX-9r-4iZ" id="9Mi-22-GMn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BlueDie" width="890" height="1024"/>
+    </resources>
 </document>
